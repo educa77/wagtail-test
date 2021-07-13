@@ -1,0 +1,88 @@
+[
+  {
+    "type": "cta",
+    "value": {
+      "title": "title from call to action home page",
+      "text": "<p data-block-key=\"j79bc\"> Use the Bootstrap grid system and its .row-cols classes to control how many grid columns (wrapped around your cards) you show per row. For example, here’s .row-cols-1 laying out the cards on one column, and .row-cols-md-2 splitting four cards to equal width across multiple rows, from the medium breakpoint up. </p>",
+      "button_page": null,
+      "button_url": "",
+      "button_text": "Learn More"
+    },
+    "id": "64a5c1fd-38fe-4845-af1f-b88ba70c7ccc"
+  },
+  {
+    "type": "title_and_text",
+    "value": {
+      "title": "third title de stream",
+      "text": "third text from stream"
+    },
+    "id": "71df4dea-88a6-4706-87c5-e39de303e907"
+  },
+  {
+    "type": "title_and_text",
+    "value": {
+      "title": "welcome title de content de stream",
+      "text": "este es el texto del content de stream"
+    },
+    "id": "22319eaf-ca8c-4caa-8d61-2a2c7b235f4c"
+  },
+  {
+    "type": "title_and_text",
+    "value": {
+      "title": "second title de stream",
+      "text": "second text de stream"
+    },
+    "id": "52410e07-b5dc-4415-ab21-5a3e6718904b"
+  },
+  {
+    "type": "full_richtext",
+    "value": "<h2 data-block-key=\"5a700\"></h2><h2 data-block-key=\"dq034\"><b>Este texto proviene del</b> <b><i>richtext</i></b> <b>editor.</b></h2><p data-block-key=\"5kcch\"></p><p data-block-key=\"cnujf\">This syntax exposes the underlying image Rendition (tmp_photo) to the developer. A “Rendition” contains the information specific to the way you’ve requested to format the image using the resize-rule, i.e. dimensions and source URL.</p><p data-block-key=\"4l7o2\">If your site defines a custom image model using AbstractImage, any additional fields you add to an image (e.g. a copyright holder) are <b>not</b> included in the rendition.</p><p data-block-key=\"5j8lp\">Therefore, if you’d added the field author to your AbstractImage in the above example, you’d access it using {{ page.photo.author }} rather than {{ tmp_photo.author }}.</p><p data-block-key=\"7d2ek\">(Due to the links in the database between renditions and their parent image, you <i>could</i> access it as {{ tmp_photo.image.author }},<a id=\"3\" linktype=\"page\"> but that has reduced readability.)</a></p>",
+    "id": "51c09c5a-f1da-4d36-aebc-d823e00611cc"
+  },
+  {
+    "type": "simple_richtext",
+    "value": "<p data-block-key=\"8vjmn\"></p><p data-block-key=\"ffa6n\"><b>Este texto proviene del</b> simple <b><i>richtext</i></b> <b>editor.</b></p><p data-block-key=\"62nm1\"></p><p data-block-key=\"adv81\"></p><p data-block-key=\"7b888\">Basically what happens is that, namespace plays a significant role on <a href=\"https://docs.djangoproject.com/en/2.1/ref/urlresolvers/#reverse\">reverse</a> finding the url. For example:</p><p data-block-key=\"5p7l9\">In your example reverse(&#x27;v1:obtain_token&#x27;) will return /v1/accounts/token/. Lets say you have two urls with same name in accounts and listings, then you might not be able to find accounts url in reverse query. That is why the warning is for. Better if you use different namespaces for each include. In you case, it should be:</p><p data-block-key=\"89sut\">path(&#x27;v1/accounts/&#x27;, include(&#x27;accounts.urls&#x27;, namespace=&#x27;accounts&#x27;)),<br/>path(&#x27;v1/listings/&#x27;, include(&#x27;listings.urls&#x27;, namespace=&#x27;listings&#x27;))<br/></p><p data-block-key=\"7e8l5\">Please read the <a href=\"https://docs.djangoproject.com/en/2.1/topics/http/urls/#url-namespaces\">documentations</a> for more details.</p>",
+    "id": "26d9fa93-43e6-4f55-a0df-25884d208a5a"
+  },
+  {
+    "type": "cards",
+    "value": {
+      "title": "Titulo del grupo la cards",
+      "cards": [
+        {
+          "image": 1,
+          "title": "titulo de la primera card",
+          "text": "texto de la primera card",
+          "button_page": 3,
+          "button_url": ""
+        },
+        {
+          "image": 1,
+          "title": "titulo del segundo card",
+          "text": "texto del segundo card",
+          "button_page": 3,
+          "button_url": ""
+        },
+        {
+          "image": 2,
+          "title": "titulo de la tercera card",
+          "text": "texto de la tercera card",
+          "button_page": 3,
+          "button_url": ""
+        }
+      ]
+    },
+    "id": "e7535639-7fee-4eda-ace3-ab994f62b206"
+  },
+  {
+    "type": "cta",
+    "value": {
+      "title": "Call to action Title",
+      "text": "<p data-block-key=\"qus8e\"><b>Rich text de call to action Rich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to </b><b><i>actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to actionRich text de call to action</i></b></p>",
+      "button_page": 3,
+      "button_url": "https://localhost:8000/",
+      "button_text": "Learn More"
+    },
+    "id": "ddfc8ef9-9934-46d6-9c78-ea9313585324"
+  }
+]
