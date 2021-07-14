@@ -6,6 +6,16 @@
 
 <a href="{% routablepageurl page "latest_post"%}">View Latest Post Only</a>
 <h2>special link is {{a_special_link}}</h2>
+<h2>
+    Categories:
+    <small>
+        {% for cat in categories %}
+        <a href="?category={{ cat.slug }}">
+            {{ cat.name }}
+        </a>{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </small>
+</h2>
 
 <div class="container">
     {% for post in posts %}
