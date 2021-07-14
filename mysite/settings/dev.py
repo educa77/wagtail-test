@@ -7,12 +7,12 @@ DEBUG = True
 SECRET_KEY = 'django-insecure-5=gy)gaj+i^n7smg7$@i1tr5jys#hy6$q-&70%t3*h-a5+ez9u'
 
 # SECURITY WARNING: define the correct hosts in production!
-ALLOWED_HOSTS = ['*'] 
+ALLOWED_HOSTS = ['*']
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 INSTALLED_APPS = INSTALLED_APPS + [
-    'debug_toolbar'
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = MIDDLEWARE + [

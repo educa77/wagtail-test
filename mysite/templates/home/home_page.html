@@ -6,16 +6,17 @@
 
 {% image self.banner_image width-1800 as img %}
 
-<div class="jumbotron"
-    style="background-image: url('{{img.url}}'); background-size: cover; background-position: center center; color: #fff !important">
+<div class="jumbotron" style="background-image: url('{{img.url}}'); min-height: 400px; height: 40vh; background-size: cover;
+    background-position: center top; display: flex; flex-direction: column; justify-content: center;color: #fff
+    !important">
     <h1 class="display-4">{{self.banner_title}}</h1>
     <div class="lead">{{self.banner_subtitle|richtext}}</div>
     {% if self.banner_cta %}
-    <a href="#" class="btn btn-primary btn-lg" role="button">@todo</a>
+    {% comment %} <a class="btn btn-primary btn-lg" href="#" role="button">@todo</a> {% endcomment %}
     {% endif %}
 </div>
 
-
+{# Example of an Orderable from home/models.py #}
 <div id="carouselExampleControls" class="carousel slide mt-4" data-bs-ride="carousel">
     <div class="carousel-inner">
         {% for loop_cycle in self.carousel_images.all %}
