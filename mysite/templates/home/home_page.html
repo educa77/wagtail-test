@@ -17,7 +17,7 @@
 </div>
 
 {# Example of an Orderable from home/models.py #}
-<div id="carouselExampleControls" class="carousel slide mt-4" data-bs-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         {% for loop_cycle in self.carousel_images.all %}
         {% image loop_cycle.carousel_image fill-900x400 as img %}
