@@ -4,6 +4,7 @@ from django.db import models
 from django.shortcuts import render
 
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
+from wagtail.contrib.sitemaps.views import sitemap
 from wagtail.core.models import Page
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.core.fields import StreamField
@@ -31,11 +32,22 @@ class BlogListingPage(RoutablePageMixin, Page):
         context["a_special_link"] = self.reverse_subpage('latest_post')
         return context
 
-    @route(r'latest/?$', name="latest_post")
+    @route(r'latest/$', name="latest_post")
     def latest_blog_posts(self, request, *args, **kwargs):
         context = self.get_context(request, *args, **kwargs)
         context["latest_posts"] = BlogDetailPage.objects.live().public()[:1]
         return render(request, "blog/latest_posts.html", context)
+
+    def get_sitemap_urls(self, request):
+        # uncomment si no queremos que figure en el sitemap
+        # return []
+        sitemap = super().get_sitemap_urls(request)
+        sitemap.append({
+            "location": self.full_url + self.reverse_subpage("latest_post"),
+            "lastmod": (self.last_published_at or self.latest_revision_created_at),
+            "priority": 0.9
+        })
+        return sitemap
 
     template = "blog/blog_listing_page.html"
 
