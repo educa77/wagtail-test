@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% comment %} {% extends 'blog_detail_page.html' %} {% endcomment %}
+
 
 {% load wagtailimages_tags wagtailcore_tags %}
 
@@ -9,8 +11,11 @@
 
 <div class="container mt-5 mb-5">
     <div class="text-center">
-        <h1>
+        <h1> {% if self.custom_title %}
             {{self.custom_title}}
+            {% else %}
+            {{self.title}}
+            {% endif %}
         </h1>
         {% if self.categories.count %}
         <div style="padding: 0 20px 20px">
@@ -41,16 +46,16 @@
     </div>
 </div>
 
-<h2>Categories</h2>
-<ul>
-    {% for cat in self.categories.all %}
-    <li>
-        <a href="{{ self.get_parent.url }}?category={{ cat.slug }}">
-            {{ cat.name }}
-        </a>
-    </li>
-    {% endfor %}
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{self.youtube_video_id}}"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
