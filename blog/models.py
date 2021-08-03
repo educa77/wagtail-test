@@ -117,7 +117,7 @@ class BlogListingPage(RoutablePageMixin, Page):
         # Paginate all posts by 2 per page
         paginator = Paginator(all_posts, 2)  # @todo cambiar a 5
         # Try to get the ?page=x value
-        page = request.GET.get("page")
+        page = request.GET.get("page")  # page = 1 or 2 or ...
         try:
             # If the page exists and the ?page=x is an int
             posts = paginator.page(page)
