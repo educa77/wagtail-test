@@ -1,6 +1,8 @@
 """Blog Listing and blog detail pages"""
 
 from django import forms
+from django.core.cache import cache
+from django.core.cache.utils import make_template_fragment_key
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db import models
 from django.shortcuts import render
@@ -193,6 +195,20 @@ class BlogDetailPage(Page):
         ], heading="Category(s)"),
         StreamFieldPanel("content"),
     ]
+
+# Para que cuando cambiemos algo en el admin luego se borre el cache y se vuelva a crear
+    def save(self, *args, **kwargs):
+        """Create a template fragment key.
+        Then delete the key."""
+        key = make_template_fragment_key(
+            "blog_post_preview",
+            [self.id]
+        )
+        cache.delete(key)
+        # no tiene otro parametro porque no hay en el html va solo navigation
+        key = make_template_fragment_key("navigation")
+        cache.delete(key)
+        return super().save(*args, **kwargs)
 
 # First subclassed blog post page
 
