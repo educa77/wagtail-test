@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load wagtailimages_tags wagtailroutablepage_tags %}
+{% load wagtailimages_tags wagtailroutablepage_tags cache%}
 
 {% block content %}
 
@@ -19,6 +19,7 @@
 
 <div class="container">
     {% for post in posts %}
+    {% cache 604800 blog_post_preview post.id %}
     <div class="row mt-5 mb-5">
         <div class="col-sm-3">
             {%image post.banner_image fill-250x250 as banner %}
@@ -38,6 +39,7 @@
             </a>
         </div>
     </div>
+    {% endcache %}
     {% endfor %}
 </div>
 {# Only show pagination if there is more than one page to click through #}

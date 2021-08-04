@@ -28,6 +28,14 @@ INTERNAL_IPS = [
     # ...
 ]
 
+# Uncomment this line to enable template caching
+# Dont forget to change the LOCATION path
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+        "LOCATION": "/Users/AGENCIA EGO/mysite/mysite/cache"
+    }
+}
 
 try:
     from .local import *
