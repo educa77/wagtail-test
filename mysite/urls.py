@@ -1,3 +1,4 @@
+from django import urls
 import debug_toolbar
 from django.conf import settings
 from django.urls import include, path
@@ -10,6 +11,8 @@ from wagtail.contrib.sitemaps.views import sitemap
 
 from search import views as search_views
 
+from .api import api_router
+
 urlpatterns = [
     path('django-admin/', admin.site.urls),
 
@@ -17,6 +20,9 @@ urlpatterns = [
     path('documents/', include(wagtaildocs_urls)),
 
     path('search/', search_views.search, name='search'),
+
+    path('api/v2/', api_router.urls),
+
     path('__debug__/', include(debug_toolbar.urls)),
 
     path('sitemap.xml', sitemap),
