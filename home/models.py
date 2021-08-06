@@ -8,6 +8,7 @@ from wagtail.core.fields import RichTextField, StreamField
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, PageChooserPanel, StreamFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
+from wagtail.api import APIField
 
 from streams import blocks
 
@@ -58,6 +59,13 @@ class HomePage(RoutablePageMixin, Page):
         null=True,
         blank=True
     )
+
+    api_fields = [
+        APIField("banner_title"),
+        APIField("banner_subtitle"),
+        APIField("banner_image"),
+        APIField("banner_cta"),
+    ]
 
     content_panels = Page.content_panels + [
         MultiFieldPanel([
